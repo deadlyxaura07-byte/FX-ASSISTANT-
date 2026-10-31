@@ -26,6 +26,22 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
+      # The Android project explicitly signs debug builds with
+      # `rootDir/debug.keystore`; create that standard debug key in CI.
+      - name: Create debug keystore if missing
+        run: |
+          if [ ! -f debug.keystore ]; then
+            keytool -genkeypair \
+              -keystore debug.keystore \
+              -storepass android \
+              -alias androiddebugkey \
+              -keypass android \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
+
       - name: Build debug APK
         run: gradle --no-daemon assembleDebug
 
