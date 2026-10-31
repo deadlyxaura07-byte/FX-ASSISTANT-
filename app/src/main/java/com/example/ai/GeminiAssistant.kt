@@ -147,7 +147,7 @@ class GeminiAssistant(private val context: Context) {
             .header("Content-Type", "application/json")
             .build()
 
-        client.newCall(request).execute().use { response ->
+        return client.newCall(request).execute().use { response ->
             val responseText = response.body?.string().orEmpty()
             if (!response.isSuccessful) {
                 val apiMessage = try {
