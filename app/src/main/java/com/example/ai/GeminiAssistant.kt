@@ -123,7 +123,7 @@ class GeminiAssistant(private val context: Context) {
         """.trimIndent()
 
         val history = JSONArray()
-        _messages.value.takeLast(12).forEach { message ->
+        _messages.value.dropLast(1).takeLast(12).forEach { message ->
             if (message.text.isNotBlank()) {
                 history.put(JSONObject()
                     .put("role", if (message.sender == MessageSender.USER) "user" else "model")
