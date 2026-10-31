@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FX Assistant</string>
+    <string name="accessibility_service_description">FX Assistant uses Accessibility to inspect on-screen content and perform automated taps, typing, navigation, and app task routines on your behalf with your permission.</string>
+</resources>

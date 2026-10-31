@@ -1,0 +1,6 @@
+{
+  "name": "FX Assistant",
+  "description": "AI screen controller and task automation assistant with real Android accessibility service, screen sight, background voice conversation, Gen Z and Alpha vibe checks, daily usage insights, and predictive free-time scheduling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
